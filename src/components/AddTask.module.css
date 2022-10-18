@@ -1,0 +1,33 @@
+.addTask form {
+    display: grid;
+    grid-template-columns: 638px 1fr;
+    gap: 0.5rem;
+    /* background-color: aqua; */
+}
+
+.addTask > form > textarea {
+    width: 100%;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    resize: none;
+    padding: 1rem;
+    height: 3.375rem;
+    line-height: 1.25rem;
+    outline: none;
+}
+
+.addTask > form > button[type=submit] {
+    background: var(--blue-500);
+    border: 0;
+    height: 3.375rem;
+    color: var(--gray-100);
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
