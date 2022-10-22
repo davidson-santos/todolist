@@ -1,7 +1,14 @@
 import styles from './StatusBar.module.css'
 import clipboard from '../assets/clipboard.svg'
 
+function enableEmptyBox(isEmpty: boolean){
+    if (isEmpty===true) {
+
+    }
+}
+
 export function StatusBar() {
+    const Empty = true
     return (
         <>
             <div className={styles.bar}>

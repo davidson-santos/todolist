@@ -1,0 +1,87 @@
+.task {
+    background: var(--gray-500);
+    display: grid;
+    grid-template-columns: 1.5rem auto 1.5rem;
+    gap: 0.75rem;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.task p {
+    /* justify-content: start; */
+    font-size: 0.875rem;
+    max-width: 39.5rem;
+    margin:0;
+    padding: 0;
+    line-height: 140%;
+}
+
+.pTag {
+    color: var(--gray-100);
+}
+
+.task button {
+    background: transparent;
+    border: 0;
+    line-height: 0;
+}
+
+.task>button svg { 
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.circle svg circle {
+    color: var(--blue-300);
+}
+
+.circle svg circle:hover {
+    color: var(--blue-500);
+    fill: var(--blue-500-0_2);
+    transition: 0.15s;
+}
+
+.task svg + svg {
+    /* z-index: 10; */
+    width: 0.6rem;
+    height: 0.6rem;
+    position: relative;
+    margin: 0 auto;
+    top: -1.02rem;
+    pointer-events: none;
+    display: none;
+}
+
+
+.task p + button > svg {
+    height: 1.5rem;
+}
+
+/* CHECKED */
+.checkedCircle svg circle {
+    color: var(--purple-500);
+    fill: var(--purple-500);
+    z-index:1;
+}
+
+.checkedCircle svg + svg {
+    display: initial;
+}
+
+.checkedCircle svg circle:hover {
+    color: var(--purple-300);
+    fill: var(--purple-300);
+    transition: 0.15s;
+}
+
+
+
+.checkedPTag {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+

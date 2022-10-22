@@ -1,7 +1,8 @@
 .addTask form {
     display: grid;
-    grid-template-columns: 638px 1fr;
+    grid-template-columns: 7fr 1fr;
     gap: 0.5rem;
+    height:3.375rem;
     /* background-color: aqua; */
 }
 
@@ -12,15 +13,22 @@
     border-radius: 8px;
     resize: none;
     padding: 1rem;
-    height: 3.375rem;
+    /* height: 3.375rem; */
     line-height: 1.25rem;
     outline: none;
+    color: var(--gray-100);
+
+}
+
+.addTask > form > textarea:focus {
+    box-shadow: none;
+    border: 1px solid var(--purple-500);
 }
 
 .addTask > form > button[type=submit] {
     background: var(--blue-500);
     border: 0;
-    height: 3.375rem;
+    /* height: 3.375rem; */
     color: var(--gray-100);
     font-weight: 700;
     font-size: 0.875rem;
@@ -30,4 +38,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+.addTask > form > button[type=submit]:hover {
+    background: var(--blue-300);
 }
