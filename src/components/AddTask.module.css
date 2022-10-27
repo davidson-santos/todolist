@@ -17,6 +17,7 @@
     line-height: 1.25rem;
     outline: none;
     color: var(--gray-100);
+    overflow: hidden;
 
 }
 

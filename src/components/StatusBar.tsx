@@ -1,31 +1,25 @@
 import styles from './StatusBar.module.css'
-import clipboard from '../assets/clipboard.svg'
 
-function enableEmptyBox(isEmpty: boolean){
-    if (isEmpty===true) {
-
-    }
+interface StatusBarProps {
+    totalTasks?: number,
+    doneTasks?: number
 }
 
-export function StatusBar() {
-    const Empty = true
+export function StatusBar({totalTasks = 0, doneTasks = 0}: StatusBarProps) {
+
     return (
         <>
             <div className={styles.bar}>
                 <div className={styles.totalCount}>
                     <p>Tarefas criadas</p>
-                    <span>0</span>
+                    <span>{totalTasks}</span>
                 </div>
                 <div className={styles.doneCount}>
                     <p>Concluídas</p>
-                    <span>0</span>
+                    <span>{totalTasks===0 ? doneTasks : doneTasks + " de " + totalTasks}</span>
                 </div>
             </div>
-            <div className={styles.emptyBox}>
-                <img src={clipboard} alt="clipboard" />
-                <h2>Você ainda não tem tarefas cadastradas</h2>
-                <h2>Crie tarefas e organize seus itens a fazer</h2>
-            </div>
+
         </>
     )
 }

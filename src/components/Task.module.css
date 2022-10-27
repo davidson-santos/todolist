@@ -28,6 +28,7 @@
     background: transparent;
     border: 0;
     line-height: 0;
+    max-height: 1.5rem;
 }
 
 .task>button svg { 
@@ -65,11 +66,6 @@
 .checkedCircle svg circle {
     color: var(--purple-500);
     fill: var(--purple-500);
-    z-index:1;
-}
-
-.checkedCircle svg + svg {
-    display: initial;
 }
 
 .checkedCircle svg circle:hover {
@@ -78,7 +74,10 @@
     transition: 0.15s;
 }
 
-
+.checkedCircle svg + svg {
+    display: initial;
+    overflow: hideen;
+}
 
 .checkedPTag {
     color: var(--gray-300);
