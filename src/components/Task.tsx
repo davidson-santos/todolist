@@ -4,37 +4,48 @@ import { Check } from '../assets/Check'
 import { Trash } from '../assets/Trash'
 import { useState } from 'react'
 
-interface TaskProps {
-    id?: string,
-    text?: string
+export interface TaskProps {
+    id: string,
+    text: string,
+    isChecked: boolean,
+    changeCheck: (idChange: string, newCheckValue: boolean) => void,
+    deleteThis: (idDelete: string) => void
 }
 
-export function Task({id,text}: TaskProps) {
+export function Task({id,text,isChecked, changeCheck, deleteThis}: TaskProps) {
     // text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam in, nemo sunt corrupti modi accusamus expedita nihil dolor aliquam minima laudantium natus esse quisquam maiores aut libero consequuntur maxime harum.'
     const [stateCheck, newStateCheck] = useState(false)
 
-    let circle = styles.circle
-    let pTag = styles.pTag
+    function handleDelete(){
+        deleteThis(id)
+    }
 
     function handleCheck() {
         newStateCheck(!stateCheck)
+        changeCheck(id, !stateCheck)
     }
+    
+    let circle = styles.circle
+    let pTag = styles.pTag
+
+
 
     if (stateCheck) {
         circle = styles.checkedCircle
         pTag = styles.checkedPTag
     }
 
-
+    isChecked = stateCheck
+    console.log(isChecked)
     return (
         // [styles.task, styles.checked].join(' ')
-        <div className={styles.task} id={id}>
+        <div className={styles.task}>
                 <button className={circle} onClick={handleCheck}>
                     <Circle weight='bold' />
                     <Check />
                 </button>
                 <p className={pTag}>{text}</p>
-                <button>
+                <button onClick={handleDelete}>
                     <Trash />
                 </button>
         </div>
